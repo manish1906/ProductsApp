@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hp\\source\\repos\\ProductApp\\ProductApp.csproj": {}
+    "E:\\ProductApp\\ProductApp\\ProductApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hp\\source\\repos\\ProductApp\\ProductApp.csproj": {
+    "E:\\ProductApp\\ProductApp\\ProductApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hp\\source\\repos\\ProductApp\\ProductApp.csproj",
+        "projectUniqueName": "E:\\ProductApp\\ProductApp\\ProductApp.csproj",
         "projectName": "ProductApp",
-        "projectPath": "C:\\Users\\hp\\source\\repos\\ProductApp\\ProductApp.csproj",
+        "projectPath": "E:\\ProductApp\\ProductApp\\ProductApp.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hp\\source\\repos\\ProductApp\\obj\\",
+        "outputPath": "E:\\ProductApp\\ProductApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",

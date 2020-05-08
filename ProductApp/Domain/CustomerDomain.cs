@@ -10,10 +10,10 @@ namespace ProductApp.Domain
     {
 
 
-        public List<vCustomers> Get(int CustomerCode)
+        public List<vCustomers> Get()
         {
 
-            var reader = this.GetReader($"select *from vCustomers where CustomerCode={CustomerCode}");
+            var reader = this.GetReader($"select *from vCustomers");
             var vCustomers = new List<vCustomers>();
             while (reader.Read())
             {
@@ -38,14 +38,13 @@ namespace ProductApp.Domain
 
         {
 
-            var reader = this.GetReader($"select *from customers where (Email='{customers.Email}' or Password='{customers.MobileNumber}') and Password='{customers.Password}'");
+            var reader = this.GetReader($"select * from customers where Email='{customers.Email}' and Password='{customers.Password}'");
             var isLoggedIn = false;
             while (reader.Read())
             {
                 isLoggedIn = true;
             }
             return isLoggedIn;
-
 
         }
         public void Add(Customers customers)

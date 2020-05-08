@@ -20,8 +20,8 @@ namespace ProductApp.Controllers
             this.customerDomain = new CustomerDomain();
         }
 
-        [HttpGet]
-        public IActionResult Get(Customers customers)
+        [HttpPost]
+        public IActionResult Post(Customers customers)
         {
             var isLoggedIn = this.customerDomain.IsLogin(customers);
             return Ok(isLoggedIn);

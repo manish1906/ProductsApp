@@ -1,0 +1,53 @@
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder,Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+@Component({
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
+})
+export class RegisterComponent implements OnInit {
+  registerFormGroup:FormGroup;
+  constructor(private formBuilder:FormBuilder,private router:Router , private http:HttpClient) { }
+
+  ngOnInit() {
+    this.registerFormGroup=this.formBuilder.group({
+      firstName:['',Validators.required],
+      lastName:['',Validators.required],
+      mobileNumber:['',Validators.required],
+      email:['',Validators.required],
+     gender:['',Validators.required],
+     dateOfBirth:['',Validators.required],
+      address:['',Validators.required],
+    password:['',Validators.required],
+   // confirmPassword:['',Validators.required]
+
+
+
+
+    })
+  }
+register()
+{
+
+
+  var gender=parseInt(this.registerFormGroup.controls.gender.value)
+this.http.post('https://localhost:44319/api/customer',{
+    FirstName:this.registerFormGroup.controls.firstName.value,
+    LastName:this.registerFormGroup.controls.lastName.value,
+    MobileNumber:this.registerFormGroup.controls.mobileNumber.value,
+    Email:this.registerFormGroup.controls.email.value,
+    Password:this.registerFormGroup.controls.password.value,
+     Gender:gender,
+      Address:this.registerFormGroup.controls.address.value,
+      DOB:this.registerFormGroup.controls.dateOfBirth.value
+   
+  }).subscribe(res=>{
+    console.log(res);
+  
+  });
+this.router.navigate(['/customer']);
+
+}
+}

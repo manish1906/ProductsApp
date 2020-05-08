@@ -20,12 +20,12 @@ namespace ProductApp.Controllers
         {
             this.customerDomain = new CustomerDomain();
         }
-        [HttpGet("{code}")]
-        public IActionResult Get(int code)
+        [HttpGet]
+        public IActionResult Get()
         {
 
-            var m = this.customerDomain.Get(code);
-            return Ok(m);
+            var customer = this.customerDomain.Get();
+            return Ok(customer);
 
         }
         [HttpPost]

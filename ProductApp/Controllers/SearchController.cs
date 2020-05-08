@@ -28,12 +28,12 @@ namespace ProductApp.Controllers
         }
 
 
-        [HttpPost]
-        public IActionResult Post(Products products)
-        {
-            productDomain.search(products);
-            return Ok();
-        }
+        //[HttpPost]
+        //public IActionResult Post(Products products)
+        //{
+        //    productDomain.search(products);
+        //    return Ok();
+        //}
 
     }
 }

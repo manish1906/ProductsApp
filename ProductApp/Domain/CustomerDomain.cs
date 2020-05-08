@@ -10,10 +10,10 @@ namespace ProductApp.Domain
     {
 
 
-        public List<vCustomers> Get()
+        public List<vCustomers> Get(int CustomerCode)
         {
 
-            var reader = this.GetReader("select *from vCustomers");
+            var reader = this.GetReader($"select *from vCustomers where CustomerCode={CustomerCode}");
             var vCustomers = new List<vCustomers>();
             while (reader.Read())
             {

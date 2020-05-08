@@ -40,10 +40,10 @@ namespace ProductApp.Domain
         {
             this.ExecuteNonQuery($"delete from products where ProductCode = {id}");
         }
-        public void search(Products products)
-        {
-            this.ExecuteNonQuery($"exec spSearchProducts @productname='{products.ProductName}'");
-        }
+        //public void search(Products products)
+        //{
+        //    this.ExecuteNonQuery($"exec spSearchProducts @productname='{products.ProductName}'");
+        //}
         public List<Products> filter(int status)
         {
 

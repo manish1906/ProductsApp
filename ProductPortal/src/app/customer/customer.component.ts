@@ -10,11 +10,12 @@ import {HttpClient,HttpClientModule} from '@angular/common/http';
 export class CustomerComponent implements OnInit {
 
   result:any;
-  
+  id:any;
   constructor(private router:Router,private http:HttpClient) { }
 
   ngOnInit() {
-    this.http.get('https://localhost:44319/api/customer').subscribe(t => {
+    this.id=sessionStorage.getItem("key");
+    this.http.get('https://localhost:44319/api/customer/'+this.id).subscribe(t => {
             this.result = t;
         });
         

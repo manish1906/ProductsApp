@@ -7,10 +7,10 @@ import { ProductComponent } from './product/product.component';
 import { UpdateComponent } from './customer/update/update.component';
 import { AddproductComponent } from './product/addproduct/addproduct.component';
 import { UpdateproductComponent } from './product/updateproduct/updateproduct.component';
-
+import { AppComponent } from './app.component';
 const routes: Routes = [
   
-    { path: '', component: LoginComponent },
+    // { path: '', component: AppComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register' ,component: RegisterComponent },
 { path: 'product' ,component: ProductComponent },

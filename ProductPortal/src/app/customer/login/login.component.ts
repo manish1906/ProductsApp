@@ -10,17 +10,17 @@ import { HttpClient } from '@angular/common/http';
 export class LoginComponent implements OnInit {
   loginFormGroup:FormGroup;
   result:any;
-  constructor(private formBuilder:FormBuilder, private router:Router,private http:HttpClient) { }
+    constructor(private formBuilder:FormBuilder, private router:Router,private http:HttpClient) { }
 
-  ngOnInit() {
-      this.loginFormGroup=this.formBuilder.group({
+    ngOnInit() {
+        this.loginFormGroup=this.formBuilder.group({
 
-    email:['',Validators.required],
-    password:['',Validators.required]
+      email:['',Validators.required],
+      password:['',Validators.required]
 
 
-  })
-  }
+    })
+    }
 login()
 {
   
@@ -31,8 +31,8 @@ login()
                 
                 }).subscribe(res=>{
                   this.result=res;
-                
-                  if(this.result==true)
+                sessionStorage.setItem("key",this.result);
+                  if(this.result!=null)
                   {
                     this.router.navigate(['/customer']);
                   }

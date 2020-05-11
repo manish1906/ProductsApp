@@ -48,7 +48,7 @@ this.http.post('https://localhost:44319/api/customer',{
    this.result=res;
   
   });
-this.router.navigate(['/customer']);
+this.router.navigate(['/login']);
 
 }
 }

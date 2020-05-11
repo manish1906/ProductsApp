@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +10,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ProductPortal';
- // display:boolean=true;
-}
+ //display:boolean=true;
+ //loginFormGroup:FormGroup;
+  result:any;
+ logout()
+ {
+//this.display=false;
+   sessionStorage.removeItem("key");
+ }
+ }

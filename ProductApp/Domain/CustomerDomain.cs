@@ -10,10 +10,10 @@ namespace ProductApp.Domain
     {
 
 
-        public List<vCustomers> Get()
+        public List<vCustomers> Get (int code)
         {
 
-            var reader = this.GetReader($"select *from vCustomers");
+            var reader = this.GetReader($"select *from vCustomers where CustomerCode='{code}'");
             var vCustomers = new List<vCustomers>();
             while (reader.Read())
             {
@@ -34,19 +34,38 @@ namespace ProductApp.Domain
         }
 
 
-        public bool IsLogin(Customers customers)
+        //public bool IsLogin(Customers customers)
+
+        //{
+
+        //    var reader = this.GetReader($"select * from customers where Email='{customers.Email}' and Password='{customers.Password}'");
+        //    var isLoggedIn = false;
+        //    while (reader.Read())
+        //    {
+        //        //var c = new Customers();
+        //        //c.CustomerCode=reader.GetInt32(0);
+        //        isLoggedIn = true;
+        //    }
+        //    return isLoggedIn;
+
+        //}
+
+        public int IsLogin(Customers customers)
 
         {
 
             var reader = this.GetReader($"select * from customers where Email='{customers.Email}' and Password='{customers.Password}'");
-            var isLoggedIn = false;
+            
+            var c = new Customers();
             while (reader.Read())
             {
-                isLoggedIn = true;
+               
+                c.CustomerCode = reader.GetInt32(0);
             }
-            return isLoggedIn;
+            return c.CustomerCode;
 
         }
+
         public void Add(Customers customers)
         {
             this.ExecuteNonQuery($"insert into customers values ('{customers.FirstName}','{customers.LastName}','{customers.Email}',{customers.MobileNumber},'{customers.DOB}',{customers.Gender},'{customers.Address}','{customers.Password}')");

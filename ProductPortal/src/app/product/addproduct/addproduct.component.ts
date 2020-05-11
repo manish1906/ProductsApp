@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AddproductComponent implements OnInit {
 addproductFormGroup:FormGroup;
+result:any;
   constructor(private formBuilder:FormBuilder,private router:Router,private http:HttpClient) { }
  
   ngOnInit() {
@@ -36,9 +37,8 @@ add()
     ProductStatus:status  
    
    
-  }).subscribe(res=>{
-    console.log(res);
-  
+  }).subscribe(res=>{this.result=res;
+     
   });
   
 

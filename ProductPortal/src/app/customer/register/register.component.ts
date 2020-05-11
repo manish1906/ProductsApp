@@ -9,13 +9,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RegisterComponent implements OnInit {
   registerFormGroup:FormGroup;
+  result:any;
   constructor(private formBuilder:FormBuilder,private router:Router , private http:HttpClient) { }
 
   ngOnInit() {
     this.registerFormGroup=this.formBuilder.group({
       firstName:['',Validators.required],
       lastName:['',Validators.required],
-      mobileNumber:['',Validators.required],
+      mobileNumber:['',[Validators.required,Validators.maxLength(10)]],
       email:['',Validators.required],
      gender:['',Validators.required],
      dateOfBirth:['',Validators.required],
@@ -44,7 +45,7 @@ this.http.post('https://localhost:44319/api/customer',{
       DOB:this.registerFormGroup.controls.dateOfBirth.value
    
   }).subscribe(res=>{
-    console.log(res);
+   this.result=res;
   
   });
 this.router.navigate(['/customer']);

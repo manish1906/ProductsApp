@@ -1,8 +1,27 @@
+<form [formGroup]="searchformGroup">
+  <div class="form-group mb-4">
+    
+    <input class="form-control mr-sm-3" type="text"  formControlName="search"  (keyup)="Search()" placeholder="Search Products" >
+        
+  </div>
+  
+    <div class="form-group col-md-6">
+      
+        <select   class="form-control"  formControlName="filter"  >
+             <option value="0" selected>--Select Filter--</option>  
+             <option *ngFor="let r of pstatus" >{{r.status}}</option>
+             <!-- <option *ngFor="let r of result" value={{r.productStatus}}>InActive</option> -->
+        </select>
+<button class="btn btn-primary" (click)="Filter()">filter</button>
+</div>
+
+  </form>
 
  <div class="container">
     <div class="">
   <div class="col-md-6 ">
 <table class="table">
+
   <thead>
   <tr>
     <th><h4>Product List</h4></th>
@@ -15,11 +34,7 @@
   </tr>
   
   </thead>
-
-  <div class="form-group mb-4">
-    <input class="form-control" type="text" [(ngModel)]="searchText" placeholder="Search">
-  </div>
-
+  
 
   
     <tr>

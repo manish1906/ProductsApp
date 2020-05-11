@@ -12,6 +12,7 @@ namespace ProductApp.Domain
         {
 
             var reader = this.GetReader("select *from vProducts");
+            //  var reader = this.GetReader($"exec spSearchProducts @productname='{products.ProductName}'");
             var vProducts = new List<vProducts>();
             while (reader.Read())
             {
@@ -21,12 +22,38 @@ namespace ProductApp.Domain
                 vProducts1.ProductBrand = reader.GetString(2);
                 vProducts1.ProductPrice = reader.GetInt32(3);
                 vProducts1.ProductStatus = reader.GetString(4);
-              
+
                 vProducts.Add(vProducts1);
 
             }
             return vProducts;
         }
+
+
+        public List<vProducts> Search(vProducts products)
+        {
+
+           // var reader = this.GetReader("select *from vProducts");
+              var reader = this.GetReader($"exec spSearchProducts @productname='{products.ProductName}'");
+            var vProducts = new List<vProducts>();
+            while (reader.Read())
+            {
+                var products1 = new vProducts();
+
+                products1.ProductCode = reader.GetInt32(0);
+                products1.ProductName = reader.GetString(1);
+                products1.ProductBrand = reader.GetString(2);
+                products1.ProductPrice = reader.GetInt32(3);
+                products1.ProductStatus = reader.GetString(4);
+                vProducts.Add(products1);
+
+            }
+            return vProducts;
+        }
+
+
+
+
 
         public void Add(Products products)
         {
@@ -40,23 +67,19 @@ namespace ProductApp.Domain
         {
             this.ExecuteNonQuery($"delete from products where ProductCode = {id}");
         }
-        //public void search(Products products)
-        //{
-        //    this.ExecuteNonQuery($"exec spSearchProducts @productname='{products.ProductName}'");
-        //}
-        public List<Products> filter(int status)
+        public List<vProducts> filter(vProducts vProducts)
         {
 
-            var reader = this.GetReader($"select *from Products where ProductStatus={status}");
-            var products = new List<Products>();
+            var reader = this.GetReader($"select *from vproducts where ProductStatus='{vProducts.ProductStatus}'");
+        var products = new List<vProducts>();
             while (reader.Read())
             {
-                var products1 = new Products();
-                products1.ProductCode = reader.GetInt32(0);
+                var products1 = new vProducts();
+        products1.ProductCode = reader.GetInt32(0);
                 products1.ProductName = reader.GetString(1);
                 products1.ProductBrand = reader.GetString(2);
                 products1.ProductPrice = reader.GetInt32(3);
-               
+                products1.ProductStatus = reader.GetString(4);
 
                 products.Add(products1);
 

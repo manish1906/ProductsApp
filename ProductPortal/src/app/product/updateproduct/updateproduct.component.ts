@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UpdateproductComponent implements OnInit {
   productCode:any;
+  result:any;
   productName:string;
       productBrand:string;
       productPrice:any;
@@ -47,8 +48,7 @@ update()
     ProductStatus:status  
    
    
-  }).subscribe(res=>{
-    console.log(res);
+  }).subscribe(res=>{this.result=res;    
   
   });
   

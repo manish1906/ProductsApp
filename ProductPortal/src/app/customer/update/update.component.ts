@@ -17,6 +17,7 @@ export class UpdateComponent implements OnInit {
   gender:any;
   address:string;
   DOB:any;
+  result:any;
   
   
  upadtecustomerFormGroup:FormGroup;
@@ -58,9 +59,8 @@ this.http.put('https://localhost:44319/api/customer',{
       Address:this.upadtecustomerFormGroup.controls.address.value,
       DOB:this.upadtecustomerFormGroup.controls.dateOfBirth.value
    
-  }).subscribe(res=>{
-    console.log(res);
-  
+  }).subscribe(res=>{this.result=res;
+   
   });
 this.router.navigate(['/customer']);
 

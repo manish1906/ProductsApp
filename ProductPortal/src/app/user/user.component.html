@@ -1,0 +1,52 @@
+
+ <div class=""> 
+  <div class="col-md-6 ">
+<table class="table">
+  <thead>
+  <tr>
+    <th><h4>User Profile</h4></th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    
+  </tr>
+  
+  </thead>
+
+
+  
+    <tr>
+      <th scope="col">Code</th>
+      <th scope="col">FirstName</th>
+      <th scope="col">LastName</th>
+      <th scope="col">MobileNumber</th>
+      <th scope="col">Email</th>
+    <th scope="col">Gender</th>
+     <th scope="col">DOB</th>
+      <th scope="col">Address</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+   
+    </tr>
+ 
+  <tr *ngFor="let r of result index as i">
+  
+    <td scope="col">{{r.userId}}</td>
+    <td scope="col">{{r.firstName}}</td>
+    <td scope="col">{{r.lastName}}</td>
+    <td scope="col">{{r.mobileNumber}}</td>
+    <td scope="col">{{r.email}}</td>
+    <td scope="col">{{r.gender}}</td>
+    <td scope="col">{{r.dob}}</td>
+    <td scope="col">{{r.address}}</td>
+    
+    
+   
+     <td><a [routerLink]="['/updatecustomer',r.customerCode,r.firstName,r.lastName,r.mobileNumber,r.email,r.gender,r.dob,r.address]"> <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+     <td><button (click)="delete(r.customerCode)" ><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+     
+  </tr>
+</table>
+  </div>
+    </div>

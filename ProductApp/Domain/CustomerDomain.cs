@@ -54,7 +54,7 @@ namespace ProductApp.Domain
 
         {
 
-            var reader = this.GetReader($"select * from customers where Email='{customers.Email}' and Password='{customers.Password}'");
+            var reader = this.GetReader($"select customercode from customers where Email='{customers.Email}' and Password='{customers.Password}'");
             
             var c = new Customers();
             while (reader.Read())

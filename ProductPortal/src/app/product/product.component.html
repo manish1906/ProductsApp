@@ -42,8 +42,8 @@
       <th scope="col">ProductName</th>
       <th scope="col">ProductBrand</th>
       <th scope="col">ProductPrice</th>
-      <th scope="col">ProductStatus</th>
-      
+      <th scope="col">ProductDescription</th>
+        <th scope="col">ProductStatus</th>
       <th scope="col">Edit</th>
       <th scope="col">Delete</th>
      
@@ -54,10 +54,10 @@
     <td scope="col">{{r.productName}}</td>
     <td scope="col">{{r.productBrand}}</td>
     <td scope="col">{{r.productPrice}}</td>
-    
+    <td scope="col">{{r.productDescription}}</td>
     <td scope="col">{{r.productStatus}}</td>
     
-     <td><a [routerLink]="['/updateproduct',r.productCode,r.productName,r.productBrand,r.productPrice,r.productStatus]"> <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+     <td><a [routerLink]="['/updateproduct',r.productCode,r.productName,r.productBrand,r.productPrice,r.productDescription,r.productStatus]"> <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
      <td><button (click)="delete(r.productCode)" ><i class="fa fa-trash" aria-hidden="true"></i></button></td>
     
   </tr>

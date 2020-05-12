@@ -18,7 +18,8 @@ result:any;
       productName:['',Validators.required],
       productBrand:['',Validators.required],
       productPrice:['',Validators.required],
-      productStatus:['',Validators.required]
+      productStatus:['',Validators.required],
+      productDescription:['',Validators.required]
 
 
     })
@@ -34,7 +35,8 @@ add()
     ProductName:this.addproductFormGroup.controls.productName.value,
     ProductBrand:this.addproductFormGroup.controls.productBrand.value,
     ProductPrice:price,
-    ProductStatus:status  
+    ProductStatus:status ,
+    ProductDescription :this.addproductFormGroup.controls.productDescription.value
    
    
   }).subscribe(res=>{this.result=res;

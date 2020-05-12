@@ -13,6 +13,7 @@ namespace ProductApp.Models
         public string ProductBrand { get; set; }
         public int ProductPrice { get; set; }
         public string ProductStatus { get; set; }
+        public string ProductDescription { get; set; }
 
     }
 }

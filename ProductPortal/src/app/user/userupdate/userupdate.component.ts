@@ -51,6 +51,8 @@ customerCode:any;
   }
 update()
 {
+   //this.customerCode=this.activateRoute.snapshot.paramMap.get("customerCode");this.customerCode=this.activateRoute.snapshot.paramMap.get("customerCode");
+    //this.customerCode=this.activateRoute.snapshot.paramMap.get("customerCode");
   var gender=parseInt(this.userupadteFormGroup.controls.gender.value)
 this.http.put('https://localhost:44319/api/user',{
   CustomerCode:parseInt(this.customerCode),

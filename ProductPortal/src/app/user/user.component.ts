@@ -14,6 +14,7 @@ export class UserComponent implements OnInit {
   constructor(private router:Router,private http:HttpClient) { }
 
   ngOnInit() {
+    console.log("ngOnInit")
     this.id=sessionStorage.getItem("key");
     this.http.get('https://localhost:44319/api/user/'+this.id).subscribe(t => {
             this.result = t;

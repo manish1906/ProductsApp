@@ -20,9 +20,6 @@ updateproductFormGroup:FormGroup;
   constructor(private formBuilder:FormBuilder,private router:Router,private http:HttpClient,private activateRoute:ActivatedRoute) { }
  
   ngOnInit() {
-   console.log("ngOninit:")
-      console.log("ngOninit:")  console.log("ngOninit:")
-      console.log("ngOninit:")
     
      this.productCode=this.activateRoute.snapshot.paramMap.get("productCode");
     this.productName=this.activateRoute.snapshot.paramMap.get("productName");

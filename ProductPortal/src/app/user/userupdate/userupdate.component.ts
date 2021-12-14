@@ -25,6 +25,7 @@ customerCode:any;
   constructor(private formBuilder:FormBuilder,private activateRoute:ActivatedRoute,private router:Router , private http:HttpClient) { }
 
   ngOnInit() {
+     console.log("ngOnInit() ")
      this.customerCode=this.activateRoute.snapshot.paramMap.get("customerCode");
     this.firstName=this.activateRoute.snapshot.paramMap.get("firstName");
     this.lastName=this.activateRoute.snapshot.paramMap.get("lastName");

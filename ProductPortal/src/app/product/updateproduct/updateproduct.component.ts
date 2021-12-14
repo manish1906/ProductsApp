@@ -24,9 +24,6 @@ updateproductFormGroup:FormGroup;
       console.log("ngOninit:")  console.log("ngOninit:")
       console.log("ngOninit:")
     
-   console.log("ngOninit:")
-      console.log("ngOninit:")  console.log("ngOninit:")
-      console.log("ngOninit:")
      this.productCode=this.activateRoute.snapshot.paramMap.get("productCode");
     this.productName=this.activateRoute.snapshot.paramMap.get("productName");
     this.productBrand=this.activateRoute.snapshot.paramMap.get("productBrand");

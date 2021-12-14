@@ -16,6 +16,11 @@ export class ProductComponent implements OnInit {
   constructor(private router:Router,private http:HttpClient,private formBuilder:FormBuilder) { }
 
   ngOnInit() {
+     //this.searchformGroup=this.formBuilder.group({
+
+      //search:'',
+    //  filter:''
+    //})
     this.searchformGroup=this.formBuilder.group({
 
       search:'',
